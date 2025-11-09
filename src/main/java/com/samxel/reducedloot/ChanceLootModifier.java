@@ -24,8 +24,7 @@ public class ChanceLootModifier extends LootModifier {
         ResourceLocation tableId = context.getQueriedLootTableId();
 
         String path = tableId.getPath();
-        String namespace = tableId.getNamespace();
-        if (namespace.equals("minecraft") && (path.startsWith("chests/"))) {
+        if (path.startsWith("chests/")) {
             ObjectArrayList<ItemStack> filtered = new ObjectArrayList<>();
             double chance = Config.chance;
             var rand = context.getRandom();
